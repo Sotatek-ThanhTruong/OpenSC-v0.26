@@ -56,7 +56,7 @@ Build and test status of specific cards:
 
 # Windows x64 Build Guide
 
-This guide provides instructions on how to build `OpenSC.msi` from the OpenSC-0.25.1 source code.
+This guide provides instructions on how to build `OpenSC.msi` from the OpenSC-0.26.1-rc1 source code.
 
 ## Software Requirements:
 
@@ -151,15 +151,15 @@ This guide provides instructions on how to build `OpenSC.msi` from the OpenSC-0.
      ```bash
      pacman -Syu
      pacman -S autoconf automake libtool make gcc pkg-config
-     cd C:\projects\OpenSC-0.25.1
+     cd C:\projects\OpenSC-0.26.1-rc1
      ./boostrap
-     cd C:\projects\OpenSC-0.25.1
+     cd C:\projects\OpenSC-0.26.1-rc1
      ./configure --disable-openssl --disable-readline --disable-zlib || cat config.log
      ```
 
 6. **Modify `Make.rules.mak`:**
 
-   - Open the file `C:\projects\OpenSC-0.25.1\win32\Make.rules.mak` in a text editor and modify the following lines:
+   - Open the file `C:\projects\OpenSC-0.26.1-rc1\win32\Make.rules.mak` in a text editor and modify the following lines:
      - Change:
        ```bash
        CNGSDK_INCL_DIR = "/IC:\Program Files (x86)\Microsoft CNG Development Kit\Include"
@@ -182,7 +182,7 @@ This guide provides instructions on how to build `OpenSC.msi` from the OpenSC-0.
 
    - In the Developer Command Prompt, run the following commands:
      ```bash
-     cd C:\projects\OpenSC-0.25.1
+     cd C:\projects\OpenSC-0.26.1-rc1
      nmake /f Makefile.mak OPENSSL_DEF=/DENABLE_OPENSSL OPENSSL_DIR=C:\OpenSSL-Win64 OPENSSL_EXTRA_CFLAGS=/DOPENSSL_SECURE_MALLOC_SIZE=65536 ZLIBSTATIC_DEF=/DENABLE_ZLIB_STATIC ZLIB_INCL_DIR=/IC:\zlib ZLIB_LIB=C:\zlib\zlib.lib OPENPACE_DEF=/DENABLE_OPENPACE OPENPACE_DIR=C:\openpace
      ```
 
@@ -204,7 +204,7 @@ If you want to rebuild after updating the source code:
    ```bash
    call "path_to_your_file\vcvarsall.bat" x64
 
-   cd C:\projects\OpenSC-0.25.1
+   cd C:\projects\OpenSC-0.26.1-rc1
    nmake /f Makefile.mak OPENSSL_DEF=/DENABLE_OPENSSL OPENSSL_DIR=C:\OpenSSL-Win64 OPENSSL_EXTRA_CFLAGS=/DOPENSSL_SECURE_MALLOC_SIZE=65536 ZLIBSTATIC_DEF=/DENABLE_ZLIB_STATIC ZLIB_INCL_DIR=/IC:\zlib ZLIB_LIB=C:\zlib\zlib.lib OPENPACE_DEF=/DENABLE_OPENPACE OPENPACE_DIR=C:\openpace
 
    cd win32
