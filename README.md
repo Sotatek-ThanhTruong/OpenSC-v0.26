@@ -198,15 +198,17 @@ This guide provides instructions on how to build `OpenSC.msi` from the OpenSC-0.
 
 If you want to rebuild after updating the source code:
 
-1. **Open** "Developer Command Prompt for Visual Studio 2017" **as Administrator**.
+1. Remove file **OpenSC.msi**
 
-2. Run the following commands:
+2. **Open** "Developer Command Prompt for Visual Studio 2017" **as Administrator**.
+
+3. Run the following commands:
    ```bash
    call "path_to_your_file\vcvarsall.bat" x64
 
-   cd C:\projects\OpenSC-0.26.1-rc1
+   cd C:\projects\OpenSC-0.26.0-rc1
    nmake /f Makefile.mak OPENSSL_DEF=/DENABLE_OPENSSL OPENSSL_DIR=C:\OpenSSL-Win64 OPENSSL_EXTRA_CFLAGS=/DOPENSSL_SECURE_MALLOC_SIZE=65536 ZLIBSTATIC_DEF=/DENABLE_ZLIB_STATIC ZLIB_INCL_DIR=/IC:\zlib ZLIB_LIB=C:\zlib\zlib.lib OPENPACE_DEF=/DENABLE_OPENPACE OPENPACE_DIR=C:\openpace
 
    cd win32
-   nmake /nologo /f Makefile.mak OPENSSL_DEF=/DENABLE_OPENSSL OPENSSL_DIR=C:\OpenSSL-Win64 OPENSSL_EXTRA_CFLAGS=/DOPENSSL_SECURE_MALLOC_SIZE=65536 ZLIBSTATIC_DEF=/DENABLE_ZLIB_STATIC ZLIB_INCL_DIR=/IC:\zlib ZLIB_LIB=C:\zlib\zlib.lib OPENPACE
+   nmake /nologo /f Makefile.mak OPENSSL_DEF=/DENABLE_OPENSSL OPENSSL_DIR=C:\OpenSSL-Win64 OPENSSL_EXTRA_CFLAGS=/DOPENSSL_SECURE_MALLOC_SIZE=65536 ZLIBSTATIC_DEF=/DENABLE_ZLIB_STATIC ZLIB_INCL_DIR=/IC:\zlib ZLIB_LIB=C:\zlib\zlib.lib OPENPACE_DEF=/DENABLE_OPENPACE OPENPACE_DIR=C:\openpace OpenSC.msi
   ```

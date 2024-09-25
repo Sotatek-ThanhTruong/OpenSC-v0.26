@@ -325,6 +325,7 @@ static int pcsc_transmit(sc_reader_t *reader, sc_apdu_t *apdu)
 		goto out;
 	if (reader->name)
 		sc_log(reader->ctx, "reader '%s'", reader->name);
+	
 	sc_apdu_log(reader->ctx, sbuf, ssize, 1);
 
 	r = pcsc_internal_transmit(reader, sbuf, ssize,
