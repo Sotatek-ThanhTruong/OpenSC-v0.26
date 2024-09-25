@@ -76,7 +76,7 @@ This guide provides instructions on how to build `OpenSC.msi` from the OpenSC-0.
 2. **Create a new folder**: `C:\projects`
 
 3. **Download and extract OpenSC v0.26.1**:
-   - [OpenSC v0.26.1-rc1](https://github.com/OpenSC/OpenSC.git) → `C:\projects`
+   - [OpenSC v0.26.1-rc1](https://github.com/OpenSC/OpenSC/releases) → `C:\projects`
 
 4. **Install Winx:**
    - Download and install from [WiX Toolset](https://github.com/wixtoolset/wix3/releases)
